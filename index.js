@@ -37,6 +37,5 @@ bot.start((ctx) => ctx.reply('welcome', {
     }
 }))
 
-// bot.start((ctx) => ctx.reply('Welcome'))
 
 bot.launch();
