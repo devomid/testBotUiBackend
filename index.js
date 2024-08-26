@@ -26,17 +26,17 @@ app.listen(port, function () {
 });
 
 
-// bot.start((ctx) => ctx.reply('welcome', {
-//     reply_markup: {
-//         keyboard: [[{
-//             text: 'باز کردن فروشگاه',
-//             web_app: {
-//                 url: webLink
-//             }
-//         }]]
-//     }
-// }))
+bot.start((ctx) => ctx.reply('welcome', {
+    reply_markup: {
+        keyboard: [[{
+            text: 'باز کردن فروشگاه',
+            web_app: {
+                url: webLink
+            }
+        }]]
+    }
+}))
 
-bot.start((ctx) => ctx.reply('Welcome'))
+// bot.start((ctx) => ctx.reply('Welcome'))
 
 bot.launch();
