@@ -15,8 +15,7 @@ const bot = new Telegraf(botToken);
 app.use(express.json());
 
 app.use(cors({
-    origin: ['https://testbotuifrontend.onrender.com',
-        'http://localhost:3000'
+    origin: ['https://testbotuifrontend.onrender.com'
     ],
     methods: ['GET', 'POST', 'DELETE', 'PATCH'],
     ptionsSuccessStatus: 200
