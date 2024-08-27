@@ -29,7 +29,7 @@ app.get('*', async (req, res) => {
     console.log(req.body);
 });
 app.post('*', async (req, res) => {
-    res.send('hello post');
+    res.status(200).json({ message: 'hellooooooo' })
     console.log('object');
 });
 
