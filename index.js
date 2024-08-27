@@ -8,12 +8,7 @@ const helmet = require('helmet');
 
 dotenv.config();
 const app = express();
-const port = process.env.PORT;
-const botToken = process.env.BOT_TOKEN;
-const webLink = process.env.WEB_LINK;
-app.use(express.json());
-app.use(helmet());
-app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
+app.use('*', cors())
 app.use(cors({
     credentials: true,
     origin: ['https://testbotuifrontend.onrender.com',
@@ -22,10 +17,15 @@ app.use(cors({
     methods: ['GET', 'POST', 'DELETE', 'PATCH'],
     ptionsSuccessStatus: 200
 }));
+const port = process.env.PORT;
+const botToken = process.env.BOT_TOKEN;
+const webLink = process.env.WEB_LINK;
+app.use(express.json());
+app.use(helmet());
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 
 const bot = new Telegraf(botToken);
 
-app.use('*', cors())
 app.get('*', async (req, res) => {
     res.send('hello get');
     console.log(req.body);
