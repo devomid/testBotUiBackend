@@ -1,6 +1,5 @@
 {
   "name": "backend",
-  "proxy": "https://testbotuibackend.onrender.com",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
