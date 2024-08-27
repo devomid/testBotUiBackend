@@ -22,6 +22,8 @@ app.use(cors({
     methods: ['GET', 'POST', 'DELETE', 'PATCH'],
 }));
 
+app.use('*', cors())
+
 app.get('*', async (req, res) => {
     res.send('hello get');
     console.log(req.body);
