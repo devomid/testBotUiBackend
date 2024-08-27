@@ -14,13 +14,13 @@ const webLink = process.env.WEB_LINK;
 const bot = new Telegraf(botToken);
 app.use(express.json());
 
-app.use(cors({
-    credentials: true,
-    origin: ['https://testbotuifrontend.onrender.com',
-        'http://localhost:5005'
-    ],
-    methods: ['GET', 'POST', 'DELETE', 'PATCH'],
-}));
+// app.use(cors({
+//     credentials: true,
+//     origin: ['https://testbotuifrontend.onrender.com',
+//         'http://localhost:5005'
+//     ],
+//     methods: ['GET', 'POST', 'DELETE', 'PATCH'],
+// }));
 
 app.use('*', cors())
 
