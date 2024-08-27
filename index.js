@@ -30,7 +30,7 @@ app.get('*', async (req, res) => {
 });
 app.post('*', async (req, res) => {
     const text = req.body;
-    console.log(ext);
+    console.log(text);
     res.status(200).json({ message: 'hellooooooo' })
     console.log('object');
 });
