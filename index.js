@@ -29,6 +29,8 @@ app.get('*', async (req, res) => {
     console.log(req.body);
 });
 app.post('*', async (req, res) => {
+    const text = req.body;
+    console.log(ext);
     res.status(200).json({ message: 'hellooooooo' })
     console.log('object');
 });
