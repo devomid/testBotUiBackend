@@ -18,12 +18,17 @@ app.get('*', async (req, res) => {
     console.log(req.body);
 });
 app.post('*', async (req, res) => {
-    res.send('hello get');
+    // res.send('hello post');
+    console.log('object');
 });
 
 app.listen(port, function () {
     console.log(`app is running on port ${port}`);
 });
+
+// app.use('/', (req, res) => {
+//     res.send('hi')
+// })
 
 
 bot.start((ctx) => ctx.reply('welcome', {
