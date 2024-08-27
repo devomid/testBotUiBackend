@@ -14,13 +14,13 @@ const webLink = process.env.WEB_LINK;
 const bot = new Telegraf(botToken);
 app.use(express.json());
 
-// app.use(cors({
-//     credentials: true,
-//     origin: ['https://testbotuifrontend.onrender.com',
-//         'http://localhost:5005'
-//     ],
-//     methods: ['GET', 'POST', 'DELETE', 'PATCH'],
-// }));
+app.use(cors({
+    credentials: true,
+    origin: ['https://testbotuifrontend.onrender.com',
+        'http://localhost:3000'
+    ],
+    methods: ['GET', 'POST', 'DELETE', 'PATCH'],
+}));
 
 app.use('*', cors())
 
@@ -31,7 +31,7 @@ app.get('*', async (req, res) => {
 app.post('*', async (req, res) => {
     const text = req.body;
     console.log(text);
-    res.status(200).json({ message: 'hellooooooo' })
+    res.status(200).json({ message: `your input is ${text}` })
     console.log('object');
 });
 
