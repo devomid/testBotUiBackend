@@ -10,11 +10,10 @@ const app = express();
 const port = process.env.PORT;
 const botToken = process.env.BOT_TOKEN;
 const webLink = process.env.WEB_LINK;
-
-const bot = new Telegraf(botToken);
 app.use(express.json());
-
+app.use('*', cors())
 app.use(cors({
+    credentials: true,
     origin: ['https://testbotuifrontend.onrender.com',
         'http://localhost:3000'
     ],
@@ -22,7 +21,7 @@ app.use(cors({
     ptionsSuccessStatus: 200
 }));
 
-app.use('*', cors())
+const bot = new Telegraf(botToken);
 
 app.get('*', async (req, res) => {
     res.send('hello get');
